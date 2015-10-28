@@ -25,13 +25,13 @@ load("test.Rda")
 outliersTolerance <- 5
 varianceTolerance <- 0.009
 
-na_count <- sapply(train, function(x) sum(is.na(x)))
-na_count <- data.frame(na_count)
-na_count$cols <- rownames(na_count)
-total_len <- length(rownames(na_count))
-sparse_cols <- na_count$cols[na_count$na_count > total_len/2]
-train <- train[ , -which(names(train) %in% sparse_cols)]
-test <- test[ , -which(names(test) %in% sparse_cols)]
+# na_count <- sapply(train, function(x) sum(is.na(x)))
+# na_count <- data.frame(na_count)
+# na_count$cols <- rownames(na_count)
+# total_len <- length(rownames(na_count))
+# sparse_cols <- na_count$cols[na_count$na_count > total_len/2]
+# train <- train[ , -which(names(train) %in% sparse_cols)]
+# test <- test[ , -which(names(test) %in% sparse_cols)]
 
 # # parse dates
 # date_features <- c('VAR_0073', 'VAR_0075', 'VAR_0156', 'VAR_0157', 'VAR_0158', 'VAR_0159', 'VAR_0166', 'VAR_0167', 
